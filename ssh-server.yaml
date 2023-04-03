@@ -35,14 +35,6 @@ spec:
           mountPath: /params/
         - name: home
           mountPath: /home
-
-      initContainers:
-      - name: init
-        image: docker.io/thanosz/alpine-sshd
-        command: [ "/usr/local/bin/init.sh" ]
-        volumeMounts:
-        - name: params
-          mountPath: /params/
       volumes:
       - name: params
         persistentVolumeClaim:

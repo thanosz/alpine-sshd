@@ -9,6 +9,6 @@ RUN sed -i 's/^GatewayPorts.*/GatewayPorts yes/g' /etc/ssh/sshd_config
 
 #COPY optional/10-disable-history.sh /etc/profile.d/
 #COPY optional/20-logout.sh /etc/profile.d/
-COPY entrypoint.sh init.sh /usr/local/bin/
+COPY entrypoint.sh /usr/local/bin
 
 ENTRYPOINT ["entrypoint.sh"]
