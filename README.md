@@ -33,3 +33,12 @@ and then
 ```
 ssh -p30901 user_on_restricted_server@yourhomedomain
 ```
+
+The container images are hosted in dockerhub for the following platforms. The images should run on all raspberry pis, X86_64 and arm64 (aarch64) architecures
+
+```
+linux/arm/v6
+linux/arm/v7
+linux/arm64/v8
+linux/amd64
+```

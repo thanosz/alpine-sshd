@@ -7,8 +7,8 @@ RUN sed -i 's/^AllowTcpForwarding.*/AllowTcpForwarding yes/g' /etc/ssh/sshd_conf
 RUN sed -i 's/^X11Forwarding.*/X11Forwarding yes/g' /etc/ssh/sshd_config 
 RUN sed -i 's/^GatewayPorts.*/GatewayPorts yes/g' /etc/ssh/sshd_config
 
-#COPY 10-disable-history.sh /etc/profile.d/
-#COPY 20-logout.sh /etc/profile.d/
+#COPY optional/10-disable-history.sh /etc/profile.d/
+#COPY optional/20-logout.sh /etc/profile.d/
 COPY entrypoint.sh init.sh /usr/local/bin/
 
 ENTRYPOINT ["entrypoint.sh"]
