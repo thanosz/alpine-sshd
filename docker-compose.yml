@@ -1,0 +1,32 @@
+version: "3"
+services:
+  sshd-server:
+    build:
+      context: .
+    container_name: sshd-server-alpine
+    entrypoint:
+      - entrypoint.sh
+    image: thanosz/alpine-sshd
+    ports:
+      - 2222:22/tcp
+      - 9090:9090/tcp
+      - 9091:9091/tcp
+      - 9092:9092/tcp
+      - 9093:9093/tcp
+      - 9094:9094/tcp
+      - 9095:9095/tcp
+      - 9096:9096/tcp
+      - 9097:9097/tcp
+      - 9098:9098/tcp
+      - 9099:9099/tcp
+      - 9022:9022/tcp
+      - 9122:9122/tcp
+      - 9222:9222/tcp
+      - 9322:9322/tcp
+    restart: unless-stopped
+    volumes:
+      - ssh_data:/etc/ssh
+    restart: unless-stopped
+
+volumes:
+  ssh_data:

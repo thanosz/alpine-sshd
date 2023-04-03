@@ -1,0 +1,167 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ssh-server
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssh-server
+  namespace: ssh-server
+  labels:
+    app: ssh-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssh-server
+  template:
+    metadata:
+      labels:
+        app: ssh-server
+    spec:
+      containers:
+      - image: docker.io/thanosz/alpine-sshd   
+        imagePullPolicy: Always
+        name: ssh-server
+        resources:
+          limits:
+            memory: "128Mi"
+        ports:
+        - containerPort: 22
+        volumeMounts:
+        - name: params
+          mountPath: /params/
+        - name: home
+          mountPath: /home
+
+      initContainers:
+      - name: init
+        image: docker.io/thanosz/alpine-sshd
+        command: [ "/usr/local/bin/init.sh" ]
+        volumeMounts:
+        - name: params
+          mountPath: /params/
+      volumes:
+      - name: params
+        persistentVolumeClaim:
+          claimName: claim-ssh-params
+      - name: home
+        persistentVolumeClaim:
+          claimName: claim-ssh-home
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-ssh-params
+  namespace: ssh-server
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 50Mi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-ssh-home
+  namespace: ssh-server
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 500Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssh-server
+  namespace: ssh-server
+spec:
+  type: NodePort
+  selector:
+    app: ssh-server
+  ports:
+    - port: 22
+      protocol: TCP
+      nodePort: 30022
+      name: port-22
+
+    - port: 30901
+      protocol: TCP
+      nodePort: 30901
+      name: port-30901
+
+    - port: 30902
+      protocol: TCP
+      nodePort: 30902
+      name: port-30902
+
+    - port: 30903
+      protocol: TCP
+      nodePort: 30903
+      name: port-30903
+
+    - port: 30904
+      protocol: TCP
+      nodePort: 30904
+      name: port-30904
+
+    - port: 30905
+      protocol: TCP
+      nodePort: 30905
+      name: port-30905
+
+    - port: 30906
+      protocol: TCP
+      nodePort: 30906
+      name: port-30906
+
+    - port: 30907
+      protocol: TCP
+      nodePort: 30907
+      name: port-30907
+
+    - port: 30908
+      protocol: TCP
+      nodePort: 30908
+      name: port-30908
+
+    - port: 30909
+      protocol: TCP
+      nodePort: 30909
+      name: port-30909
+
+    - port: 30910
+      protocol: TCP
+      nodePort: 30910
+      name: port-30910
+
+    - port: 30911
+      protocol: TCP
+      nodePort: 30911
+      name: port-30911
+
+    - port: 30912
+      protocol: TCP
+      nodePort: 30912
+      name: port-30912
+
+    - port: 30913
+      protocol: TCP
+      nodePort: 30913
+      name: port-30913
