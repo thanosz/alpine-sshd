@@ -23,7 +23,6 @@ services:
       - 9122:9122/tcp
       - 9222:9222/tcp
       - 9322:9322/tcp
-    restart: unless-stopped
     volumes:
       - ssh_data:/etc/ssh
     restart: unless-stopped

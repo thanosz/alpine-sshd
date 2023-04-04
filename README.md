@@ -7,6 +7,8 @@ It comes with the following sshd options enabled
 AllowTcpForwarding yes
 GatewayPorts yes
 X11Forwarding yes
+ClientAliveInterval 30
+ClientAliveCountMax 3
 ```
 
 It exposes a set of ports that can be used by the logged-in user for forwarding traffic
@@ -25,13 +27,13 @@ This was developed on Raspberry-pi to easily access restricted networks from whi
 
 From the server on the restriced network
 ```
-ssh -p30022 -N -R30901:localhost:22 user@yourhomedomain
+ssh -p2222 -N -R9090:localhost:22 user@yourhomedomain
 ```
 
 and then
 
 ```
-ssh -p30901 user_on_restricted_server@yourhomedomain
+ssh -p9090 user_on_restricted_server@yourhomedomain
 ```
 
 The container images are hosted in dockerhub for the following platforms. The images should run on all raspberry pis, x86_64 and arm64 (aarch64) architecures

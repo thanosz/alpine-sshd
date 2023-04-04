@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -47,8 +48,6 @@ spec:
       schedulerName: default-scheduler
       terminationGracePeriodSeconds: 30
 
-
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -84,76 +83,75 @@ metadata:
   name: ssh-server
   namespace: ssh-server
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: ssh-server
   ports:
-    - port: 22
+    - port: 2222
       protocol: TCP
-      nodePort: 30022
+      targetPort: 22
       name: port-22
 
-    - port: 30901
+    - port: 9090
       protocol: TCP
-      nodePort: 30901
-      name: port-30901
+      name: port-9090
 
-    - port: 30902
+    - port: 9091
       protocol: TCP
-      nodePort: 30902
-      name: port-30902
+      name: port-9091
 
-    - port: 30903
+    - port: 9092
       protocol: TCP
-      nodePort: 30903
-      name: port-30903
+      name: port-9092
 
-    - port: 30904
+    - port: 9093
       protocol: TCP
-      nodePort: 30904
-      name: port-30904
+      name: port-9093
 
-    - port: 30905
+    - port: 9094
       protocol: TCP
-      nodePort: 30905
+      name: port-9094
+
+    - port: 9095
+      protocol: TCP
       name: port-30905
 
-    - port: 30906
+    - port: 9096
       protocol: TCP
-      nodePort: 30906
       name: port-30906
 
-    - port: 30907
+    - port: 9097
       protocol: TCP
-      nodePort: 30907
       name: port-30907
 
-    - port: 30908
+    - port: 9098
       protocol: TCP
-      nodePort: 30908
-      name: port-30908
+      name: port-9095
 
-    - port: 30909
+    - port: 9099
       protocol: TCP
-      nodePort: 30909
-      name: port-30909
+      name: port-9099
 
-    - port: 30910
+    - port: 9100
       protocol: TCP
-      nodePort: 30910
-      name: port-30910
+      name: port-9100
 
-    - port: 30911
+    - port: 9101
       protocol: TCP
-      nodePort: 30911
-      name: port-30911
+      name: port-9101
 
-    - port: 30912
+    - port: 9102
       protocol: TCP
-      nodePort: 30912
-      name: port-30912
+      name: port-9102
 
-    - port: 30913
+    - port: 9103
       protocol: TCP
-      nodePort: 30913
-      name: port-30913
+      name: port-9103
+
+    - port: 9104
+      protocol: TCP
+      name: port-9104
+
+    - port: 9105
+      protocol: TCP
+      name: port-9105
