@@ -2,6 +2,7 @@
 
 if [[ ! -f /params/passwd ]]; then
 	ssh-keygen -A
+	mkdir -p /params/ssh
 	cp -rvp /etc/ssh /params
 	cp -vp /etc/passwd /etc/group /etc/shadow /params
 fi
