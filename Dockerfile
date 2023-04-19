@@ -13,4 +13,6 @@ RUN sed -i 's/^#ClientAliveCountMax.*/ClientAliveCountMax 3/g' /etc/ssh/sshd_con
 #COPY optional/20-logout.sh /etc/profile.d/
 COPY entrypoint.sh /usr/local/bin
 
+EXPOSE 22
+
 ENTRYPOINT ["entrypoint.sh"]
