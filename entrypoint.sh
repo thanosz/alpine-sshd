@@ -1,13 +1,13 @@
 #!/bin/sh
 
-if [[ ! -f /params/passwd ]]; then
+if [[ ! -f /params/ssh/ssh_host_rsa_key.pub ]]; then
 	ssh-keygen -A
 	mkdir -p /params/ssh
 	cp -rvp /etc/ssh /params
 	cp -vp /etc/passwd /etc/group /etc/shadow /params
 fi
 
-rm -r /etc/ssh /etc/passwd /etc/group /etc/shadow
+rm -rf /etc/ssh /etc/passwd /etc/group /etc/shadow
 ln -sf /params/ssh /etc/ssh
 ln -sf /params/passwd /etc/passwd
 ln -sf /params/group /etc/group
