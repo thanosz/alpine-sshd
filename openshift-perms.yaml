@@ -41,7 +41,8 @@ seLinuxContext:
   type: MustRunAs
 supplementalGroups:
   type: RunAsAny
-users: []
+users: 
+- sshdrunner
 volumes:
 - configMap
 - downwardAPI
