@@ -11,9 +11,9 @@ ClientAliveInterval 30
 ClientAliveCountMax 3
 ```
 
-It exposes a set of ports that can be used by the logged-in user for forwarding traffic
+Primary goal is to allow forwarding traffic
 
-The concept is that you deploy it and setup users which can later be used for ssh tunneling, port forwarding, etc.
+The concept is that you deploy it and setup users which can later be used for ssh tunneling, port forwarding, etc. The users must be created by runinng standard linux commands.
 
 ```
 docker exec -it <container-name> adduser theUser
@@ -27,7 +27,7 @@ This was developed on Raspberry-pi to easily access restricted networks from whi
 
 From the server on the restriced network
 ```
-ssh -p2222 -N -R9090:localhost:22 user@yourhomedomain
+ssh -N -R9090:localhost:22 user@yourhomedomain
 ```
 
 and then
