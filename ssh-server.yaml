@@ -57,7 +57,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+      #storageClassName: local-path
   resources:
     requests:
       storage: 50Mi
@@ -71,7 +71,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+      #storageClassName: local-path
   resources:
     requests:
       storage: 500Mi
