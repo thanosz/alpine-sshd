@@ -155,3 +155,23 @@ spec:
     - port: 9105
       protocol: TCP
       name: port-9105
+
+    - port: 60001
+      protocol: UDP
+      name: port-60001
+
+    - port: 60002
+      protocol: UDP
+      name: port-60002
+
+    - port: 60003
+      protocol: UDP
+      name: port-60003
+
+    - port: 60004
+      protocol: UDP
+      name: port-60004
+
+    - port: 60005
+      protocol: UDP
+      name: port-60005

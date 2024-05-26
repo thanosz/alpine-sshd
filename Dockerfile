@@ -1,6 +1,6 @@
 FROM alpine:3.19
 
-RUN apk update && apk add --no-cache openssh screen nano iproute2 python3 tmux \
+RUN apk update && apk add --no-cache openssh screen nano iproute2 python3 tmux mosh \
 		&& rm -rf /var/cache/apk/* /tmp/* /etc/motd
 
 RUN sed -i 's/^AllowTcpForwarding.*/AllowTcpForwarding yes/g' /etc/ssh/sshd_config 
