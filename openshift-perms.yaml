@@ -12,10 +12,10 @@ allowHostPID: false
 allowHostPorts: false
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: false
-allowedCapabilities: null
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities:
+allowedCapabilities:
   - "SYS_CHROOT"
+apiVersion: security.openshift.io/v1
+defaultAddCapabilities: null
 fsGroup:
   type: RunAsAny
 groups:
@@ -52,8 +52,6 @@ volumes:
 - projected
 - secret
 
-
-
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -74,3 +72,4 @@ subjects:
 - kind: ServiceAccount
   name: sshdrunner
   namespace: ssh-server
+
