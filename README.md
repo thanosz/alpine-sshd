@@ -1,4 +1,4 @@
-# sshd-alpine
+# alpine-sshd
 sshd-alpine is a an SSH server for docker or kubernetes to allow X11 and tcp forwarding and ssh tunneling.
 
 It comes with the following sshd options enabled
