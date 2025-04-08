@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.21.3
 
 RUN apk update && apk add --no-cache openssh screen nano iproute2 python3 tmux mosh \
 		&& rm -rf /var/cache/apk/* /tmp/* /etc/motd
