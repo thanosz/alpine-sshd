@@ -10,6 +10,7 @@ fi
 rm -rf /etc/ssh /etc/passwd /etc/group /etc/shadow
 ln -sf /params/ssh /etc/ssh
 ln -sf /params/passwd /etc/passwd
+ln -sf /params/shadow /etc/shadow
 ln -sf /params/group /etc/group
 
 syslog-ng --no-caps -F &
