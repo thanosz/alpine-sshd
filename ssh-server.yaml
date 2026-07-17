@@ -156,6 +156,42 @@ spec:
       protocol: TCP
       name: port-9105
 
+    - port: 9106
+      protocol: TCP
+      name: port-9106
+
+    - port: 9107
+      protocol: TCP
+      name: port-9107
+
+    - port: 9108
+      protocol: TCP
+      name: port-9108
+
+    - port: 9109
+      protocol: TCP
+      name: port-9109
+
+    - port: 9110
+      protocol: TCP
+      name: port-9110
+
+    - port: 9111
+      protocol: TCP
+      name: port-9111
+
+    - port: 9112
+      protocol: TCP
+      name: port-9112
+
+    - port: 9113
+      protocol: TCP
+      name: port-9113
+
+    - port: 9114
+      protocol: TCP
+      name: port-9114
+
     - port: 60001
       protocol: UDP
       name: port-60001
